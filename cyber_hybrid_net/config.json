@@ -1,0 +1,54 @@
+{
+  "architecture": "CyberHybridNet",
+  "description": "Hybrid Transformer with Multi-Scale CNN + Gated Cross-Attention + MoE for Cybersecurity Anomaly Detection",
+  "training_config": {
+    "hidden_dim": 128,
+    "num_layers": 4,
+    "num_heads": 8,
+    "num_experts": 4,
+    "ffn_mult": 4,
+    "dropout": 0.15,
+    "batch_size": 512,
+    "lr": 0.0003,
+    "weight_decay": 0.0001,
+    "epochs": 20,
+    "patience": 5,
+    "focal_gamma": 2.0
+  },
+  "input_dim_cicids": 78,
+  "input_dim_unsw": 39,
+  "num_classes_cicids": 2,
+  "num_classes_unsw": 2,
+  "metrics_cicids2017": {
+    "loss": 0.35920482825457567,
+    "accuracy": 77.5248,
+    "f1_macro": 74.60951627489641,
+    "f1_weighted": 76.14176781631336,
+    "precision": 80.75155495768762,
+    "recall": 73.83186544213646,
+    "auc": 88.39384464355872
+  },
+  "metrics_unsw_nb15": {
+    "loss": 0.00017772061948710107,
+    "accuracy": 98.77333333333334,
+    "f1_macro": 97.03132302192441,
+    "f1_weighted": 98.80122878495375,
+    "precision": 95.0184102230886,
+    "recall": 99.31020004198783,
+    "auc": 99.94404488346683
+  },
+  "components": [
+    "Multi-Scale 1D CNN Feature Extractor (3 scales)",
+    "Rotary Position Embeddings",
+    "Multi-Head Self-Attention",
+    "Gated Cross-Attention",
+    "SwiGLU Feed-Forward Networks",
+    "Mixture-of-Experts Classifier (4 experts)",
+    "Focal Loss for class imbalance",
+    "Cosine LR with warmup"
+  ],
+  "datasets": [
+    "lacg030175/CICIDS2017 (temporal_3way split)",
+    "Mouwiya/UNSW-NB15"
+  ]
+}

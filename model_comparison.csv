@@ -1,0 +1,7 @@
+Metric,XGBoost,CyberHybridNet
+Accuracy,1.0000,0.2067
+Precision,1.0000,0.1086
+Recall,1.0000,1.0000
+F1-Score,1.0000,0.1959
+AUC-ROC,1.0000,1.0000
+Latency (ms),0.0500,0.1145
