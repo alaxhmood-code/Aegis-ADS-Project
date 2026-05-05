@@ -1,1 +1,12 @@
-{"model_name": "Aegis IDS RF Model", "version": "1.0"}
+{
+  "model_type": "Random Forest",
+  "accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1_score": 1.0,
+  "training_samples": 3012,
+  "test_samples": 1292,
+  "features": 78,
+  "dataset": "CIC-IDS2017 (Wednesday)",
+  "training_date": "2026-05-05T19:09:21.719332"
+}
